@@ -6,7 +6,7 @@ namespace RestaurantReservation.Db.Entities
     public class MenuItem
     {
         public int Id { get; set; }
-        public int RestaurantId { get; set; } // Corrected property name
+        public int RestaurantId { get; set; } 
         public Restaurant Restaurant { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
