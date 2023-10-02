@@ -10,7 +10,7 @@ namespace RestaurantReservation.Db.Entities
     {
         public int Id { get; set; }
         public int ResturantId { get; set; }
-        public Resturant Resturant { get; set; }
+        public Restaurant Restaurant { get; set; }
         public int Capacity { get; set; }
         public List<Reservation> Reservations { get; set; }
     }
