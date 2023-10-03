@@ -36,7 +36,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<Table> GetByIdAsync(int tableId)
+        public async Task<Table?> GetByIdAsync(int tableId)
         {
             return await _dbContext.Tables.FindAsync(tableId);
         }
@@ -46,7 +46,7 @@ namespace RestaurantReservation.Db.Repositories
             return await _dbContext.Tables.AnyAsync(t => t.Id == tableId);
         }
 
-        public async Task<List<Table>> GetAllAsync()
+        public async Task<List<Table>?> GetAllAsync()
         {
             return await _dbContext.Tables.ToListAsync();
         }
