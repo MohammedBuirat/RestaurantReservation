@@ -37,7 +37,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<Order> GetByIdAsync(int orderId)
+        public async Task<Order?> GetByIdAsync(int orderId)
         {
             return await _dbContext.Orders.FindAsync(orderId);
         }

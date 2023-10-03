@@ -36,7 +36,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<OrderItem> GetByIdAsync(int orderItemId)
+        public async Task<OrderItem?> GetByIdAsync(int orderItemId)
         {
             return await _dbContext.OrderItems.FindAsync(orderItemId);
         }
@@ -46,7 +46,7 @@ namespace RestaurantReservation.Db.Repositories
             return await _dbContext.OrderItems.AnyAsync(oi => oi.Id == orderItemId);
         }
 
-        public async Task<List<OrderItem>> GetAllAsync()
+        public async Task<List<OrderItem>?> GetAllAsync()
         {
             return await _dbContext.OrderItems.ToListAsync();
         }

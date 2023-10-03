@@ -37,7 +37,7 @@ namespace RestaurantReservation.Db.Repositories
             }
         }
 
-        public async Task<Employee> GetByIdAsync(int employeeId)
+        public async Task<Employee?> GetByIdAsync(int employeeId)
         {
             return await _dbContext.Employees.FindAsync(employeeId);
         }

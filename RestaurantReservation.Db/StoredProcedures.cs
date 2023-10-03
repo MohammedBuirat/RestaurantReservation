@@ -11,7 +11,7 @@ public class StoredProcedures
 		_dbContext = dbContext;
 	}
 
-    public async Task<List<Customer>> FindCustomersWithLargePartiesAsync(int partySizeThreshold)
+    public async Task<List<Customer>?> FindCustomersWithLargePartiesAsync(int partySizeThreshold)
     {
         var partySizeParameter = new SqlParameter("@partySizeThreshold", partySizeThreshold);
         var result = await _dbContext.Set<Customer>()
