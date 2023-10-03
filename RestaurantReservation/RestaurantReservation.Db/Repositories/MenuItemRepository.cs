@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReservation.Db.Repositories
 {
-    internal class MenuItemRepository
+    public class MenuItemRepository
     {
         private readonly RestaurantReservationDbContext _dbContext;
 

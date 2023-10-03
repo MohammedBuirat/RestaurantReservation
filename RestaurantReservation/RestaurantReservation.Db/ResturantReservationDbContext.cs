@@ -3,7 +3,7 @@ using RestaurantReservation.Db.Entities;
 
 namespace RestaurantReservation.Db
 {
-    internal class RestaurantReservationDbContext : DbContext
+    public class RestaurantReservationDbContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
