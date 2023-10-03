@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Xml.Linq;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 using RestaurantReservation.Db;
-using RestaurantReservation.Db.Entities;
 using RestaurantReservation.Db.Repositories;
-using System;
-using System.Threading.Tasks;
 
 namespace RestaurantReservation
 {
@@ -11,16 +11,16 @@ namespace RestaurantReservation
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("hELLO WORLD");
-            await op(); 
-            Console.WriteLine("hELLO WORLD");
+            string ConnectionString = ConfigurationManager.AppSettings["SqlConnectionString"];
+            Console.WriteLine(ConnectionString);
+            await op(ConnectionString); 
         }
 
-        static async Task op()
+        static async Task op(string ConnectionString)
         {
-            RestaurantReservationDbContext _context = new RestaurantReservationDbContext();
+            RestaurantReservationDbContext _context = new RestaurantReservationDbContext(ConnectionString);
             CustomerRepository customerRepository = new CustomerRepository(_context);
-            var customers = await customerRepository.GetAllAsync(); 
+            var customers = await customerRepository.GetAllAsync();
 
             foreach (var customer in customers)
             {

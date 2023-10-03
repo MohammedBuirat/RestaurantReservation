@@ -1,10 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Configuration; 
 using RestaurantReservation.Db.Entities;
+using Microsoft.Extensions.Configuration;
+using ConfigurationManager = System.Configuration.ConfigurationManager;
 
 namespace RestaurantReservation.Db
 {
+    
     public class RestaurantReservationDbContext : DbContext
     {
+        private string connectionString;
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
@@ -14,9 +19,13 @@ namespace RestaurantReservation.Db
         public DbSet<Restaurant> Restaurants { get; set; }
         public DbSet<Table> Tables { get; set; }
 
+        public RestaurantReservationDbContext(string conn)
+        {
+            connectionString = conn;
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Data Source=M7mad;Initial Catalog=RestaurantReservationCore;Integrated Security=True;TrustServerCertificate=True;";
+            Console.Write(connectionString);
             optionsBuilder.UseSqlServer(connectionString);
         }
     }
