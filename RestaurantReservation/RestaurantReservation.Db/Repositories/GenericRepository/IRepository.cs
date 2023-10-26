@@ -1,4 +1,4 @@
-﻿namespace RestaurantReservation.Db.Repositories.IRepostories
+﻿namespace RestaurantReservation.Db.Repositories.GenericRepository
 {
     public interface IRepository<T> where T : class
     {

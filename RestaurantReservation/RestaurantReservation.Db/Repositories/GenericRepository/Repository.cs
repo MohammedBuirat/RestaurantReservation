@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace RestaurantReservation.Db.Repositories.IRepostories.GenericRepository
+namespace RestaurantReservation.Db.Repositories.GenericRepository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
