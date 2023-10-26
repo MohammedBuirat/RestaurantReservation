@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantReservation.Db.Repositories.IRepostories
 {
-    public interface ITableRepository : IRepository<Table>;
+    public interface ITableRepository : IRepository<Table>
     {
     }
 }
